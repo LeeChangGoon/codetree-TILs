@@ -12,6 +12,6 @@ public class Main {
                 dp[i]=(dp[i] + dp[j] * 2) % 1000000007;
             }
         }
-        System.out.print(dp[n]);
+        System.out.print(dp[n]%1000000007);
     }
 }
