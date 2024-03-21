@@ -6,7 +6,12 @@ public class Main {
         int[] dp = new int[n+1];
         dp[1]=2;
         for(int i=2; i<=n; i++){
-            dp[i]=(dp[i-1]*3 + 1)%1000000007;
+            for(int j=1; j<n; j++){
+                dp[i]+=dp[j]*(i/j);
+            }
+            if(i%2==0) dp[i]+=3;
+            else dp[i]+=2;
+            dp[i]%=1000000007;
         }
         System.out.print(dp[n]%1000000007);
     }
